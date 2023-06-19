@@ -1,0 +1,38 @@
+int signal(int s)
+{
+s=s+1;
+return s;
+}
+void producer()
+{
+m=wait(m);
+e=wait(e);
+f=signal(f);
+printf("produces PRODUCES item\n");
+m=signal(m);
+}
+void consumer()
+{
+m=wait(m);
+f=wait(f);
+e=signal(e);
+printf("consumer CONSUMES item\n");
+m=signal(m);
+}
+int main()
+{ int o;
+while(o!=3){ printf("-----choose------\n 1.produce\n2.consume\n3.exit\n");
+scanf("%d",&o);
+switch(o)
+{
+case 1:if(m==1&&e!=0)
+	producer();
+	else printf("producer waiting\n");
+break;
+case 2:
+if(m==1&&f!=0)
+consumer();
+else  printf("comsumer waiting\n");
+
+
+}}}
