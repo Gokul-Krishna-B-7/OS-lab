@@ -1,3 +1,12 @@
+#include <stdio.h>
+#include<stdlib.h>
+int m=1,f=0,e=5;
+int wait(int s)
+{ 
+ while(s<=0)
+s=s-1;
+return s;
+}
 int signal(int s)
 {
 s=s+1;
